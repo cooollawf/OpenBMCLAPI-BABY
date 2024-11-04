@@ -1,0 +1,25 @@
+{
+    "name": "@types/json-stringify-safe",
+    "version": "5.0.3",
+    "description": "TypeScript definitions for json-stringify-safe",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/json-stringify-safe",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "BendingBender",
+            "githubUsername": "BendingBender",
+            "url": "https://github.com/BendingBender"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/json-stringify-safe"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "44234ac10eba782ef96fa7819ae592ee4407524af681c9b7a4747b31d7cdef83",
+    "typeScriptVersion": "4.5"
+}

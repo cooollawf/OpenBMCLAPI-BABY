@@ -1,0 +1,4 @@
+Flask
+psutil
+requests==2.26.0
+PyQt5==5.15.6
