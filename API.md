@@ -11,7 +11,7 @@ OpenBMCLAPI BABY API 是一个基于 Flask 的 API，主要用于管理和监控
 
 ## API 接口
 
-### 1. 检查用户代理
+### 1. 用户代理验证
 - **方法**: `GET`
 - **路由**: `/password?value=<new_user_agent>`
 - **描述**: 更新用户代理检查密码并将其写入 `password` 文件。
@@ -83,7 +83,7 @@ OpenBMCLAPI BABY API 是一个基于 Flask 的 API，主要用于管理和监控
 ### 7. 启动 Alist
 - **方法**: `GET`
 - **路由**: `/openalist`
-- **描述**: 启动指定的 Alist 可执行文件。
+- **描述**: 启动指定的 Alist。
 - **响应**:
     - 成功: `"程序已启动！"`
     - 失败: `{"error": "启动程序时出错: <error_message>"}`
@@ -152,8 +152,8 @@ OpenBMCLAPI BABY API 是一个基于 Flask 的 API，主要用于管理和监控
 ### 12.注意的一些东西
 - 请不要在生产环境中使用默认的123456密码，请使用更安全的密码。
 - 在访问主机的时候（比如RDP这种）需要注意密码，请看以下的密码
-`user：OBABAdmin`
-`password：ADm8H%MdA`
+- `user：OBABAdmin`
+- `password：ADm8H%MdA`
 - 默认密码在登录系统后可更改。
 
 ## 注意事项
