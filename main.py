@@ -83,7 +83,7 @@ def change_user_agent():
 def open_program():
     try:
         # 打开指定的可执行文件
-        subprocess.Popen(['C:\\OpenBMCLAPI\\OpenBMCLAPIStart.bat'], shell=True)
+        subprocess.Popen(['C:\\oba-node\\run.bat'], shell=True)
         global openbmclapistatus
         openbmclapistatus = 1
         return '程序已启动！', 200
@@ -213,20 +213,20 @@ def update_cluid(id):
         with open(env_file_path, 'r') as f:
             lines = f.readlines()
 
-        # 找到并替换cluid
+        # 找到并替换CLUSTER_ID的值
         for i, line in enumerate(lines):
-            if line.startswith('cluid'):
-                lines[i] = f'cluid={id}\n'  # 替换cluid的值
+            if line.startswith('CLUSTER_ID='):
+                lines[i] = f'CLUSTER_ID={id}\n'  # 替换CLUSTER_ID后的值
 
         # 写回env文件
         with open(env_file_path, 'w') as f:
             f.writelines(lines)
 
-        return jsonify({'message': 'cluid已更新', 'new_cluid': id}), 200
+        return jsonify({'message': 'CLUSTER_ID已更新', 'new_cluster_id': id}), 200
     except FileNotFoundError:
         return jsonify({'error': 'env文件未找到'}), 404
     except Exception as e:
-        return jsonify({'error': f'更新cluid时出错: {str(e)}'}), 500
+        return jsonify({'error': f'更新CLUSTER_ID时出错: {str(e)}'}), 500
 
 @app.route('/update_secid/<secid>', methods=['GET'])
 def update_secid(secid):  # 修改函数名
@@ -240,20 +240,21 @@ def update_secid(secid):  # 修改函数名
         with open(env_file_path, 'r') as f:
             lines = f.readlines()
 
-        # 找到并替换secid
+        # 找到并替换CLUSTER_SECRET的值
         for i, line in enumerate(lines):
-            if line.startswith('secid'):
-                lines[i] = f'secid={secid}\n'  # 替换secid的值
+            if line.startswith('CLUSTER_SECRET='):
+                lines[i] = f'CLUSTER_SECRET={secid}\n'  # 替换CLUSTER_SECRET后的值
 
         # 写回env文件
         with open(env_file_path, 'w') as f:
             f.writelines(lines)
 
-        return jsonify({'message': 'secid已更新', 'new_secid': secid}), 200
+        return jsonify({'message': 'CLUSTER_SECRET已更新', 'new_cluster_secret': secid}), 200
     except FileNotFoundError:
         return jsonify({'error': 'env文件未找到'}), 404
     except Exception as e:
-        return jsonify({'error': f'更新secid时出错: {str(e)}'}), 500
+        return jsonify({'error': f'更新CLUSTER_SECRET时出错: {str(e)}'}), 500
+
 
 @app.route('/update_port/<port>', methods=['GET'])
 def update_port(port):  # 修改函数名
@@ -267,20 +268,20 @@ def update_port(port):  # 修改函数名
         with open(env_file_path, 'r') as f:
             lines = f.readlines()
 
-        # 找到并替换port
+        # 找到并替换CLUSTER_PORT的值
         for i, line in enumerate(lines):
-            if line.startswith('port'):
-                lines[i] = f'port={port}\n'  # 替换port的值
+            if line.startswith('CLUSTER_PORT='):
+                lines[i] = f'CLUSTER_PORT={port}\n'  # 替换CLUSTER_PORT后的值
 
         # 写回env文件
         with open(env_file_path, 'w') as f:
             f.writelines(lines)
 
-        return jsonify({'message': 'port已更新', 'new_port': port}), 200
+        return jsonify({'message': 'CLUSTER_PORT已更新', 'new_cluster_port': port}), 200
     except FileNotFoundError:
         return jsonify({'error': 'env文件未找到'}), 404
     except Exception as e:
-        return jsonify({'error': f'更新port时出错: {str(e)}'}), 500
+        return jsonify({'error': f'更新CLUSTER_PORT时出错: {str(e)}'}), 500
 
 
 

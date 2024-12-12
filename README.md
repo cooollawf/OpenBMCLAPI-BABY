@@ -16,4 +16,5 @@
 ## 特殊的安装方法
 - 由于OpenBMCLAPI-BABY的安装只是在你的机子上安装了后端，其他的操作都需要你自己手动操作，所以我们提供了一些ghost镜像，可以兼容小主机/nas等特殊客户机的安装。
 - 下载ghost镜像：https://github.com/cooollawf/OpenBMCLAPI-BABY/releases/tag/v1.0.0（目前无镜像）
-- 解压ghost镜像：`tar -zxvf ghost-v1.0.0.tar.gz`
+- 使用zip解压软件解压镜像到你要安装的目录，然后拿出system.gho文件，把它复制到你的机子上，然后进入PE安装程序，选择system.gho文件，安装系统。
+- 完成后安装API文档操作即可。
